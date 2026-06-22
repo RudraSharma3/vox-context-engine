@@ -1,0 +1,4 @@
+ByteVox Enterprise Platform Pricing and Access Models:
+1. Developer Sandbox Tier: Costing $0/month, this entry-level tier allows for 50 free conversational minutes but restricts advanced programmatic system hooks.
+2. Professional Tier: For $49/month, growing teams unlock high-volume concurrency thresholds and access to standard text-to-speech channels.
+3. Enterprise Architecture Plan: Fixed at $299/month, this specific pricing plan includes full, unrestricted API access, custom webhook streaming pipelines, and priority token allocations.

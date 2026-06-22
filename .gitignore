@@ -1,0 +1,13 @@
+# Exclude Python runtime bytecode cache
+__pycache__/
+*.pyc
+
+# Exclude generated local binary indexes
+data/bm25_corpus.pkl
+
+# Exclude deep HuggingFace model cache pools
+data/.hf_cache/
+
+# System or IDE structures
+.vscode/
+.DS_Store

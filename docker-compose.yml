@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # The Qdrant Vector Database Engine
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: vox-qdrant-db
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    restart: unless-stopped
+
+  # Our FastAPI RAG Application Layer
+  api:
+    build: .
+    container_name: vox-rag-api
+    ports:
+      - "8000:8000"
+    environment:
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GOOGLE_API_KEY=${GEMINI_API_KEY}
+    depends_on:
+      - qdrant
+    volumes:
+      - ./data:/app/data
+
+volumes:
+  qdrant_storage:
